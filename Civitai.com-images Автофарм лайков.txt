@@ -7,6 +7,8 @@
 if (typeof(total) === "undefined")
 	var total = 0; // Счетчик всего лайков тыкнуто что бы знать когда будет 50.
 
+function getRandomArbitrary(min, max) { return Math.random() * (max - min) + min; }
+
 function sleep(milliseconds) { // Костыльный таймер из 1 запроса гугла
   const date = Date.now();  let currentDate = null;
   do { currentDate = Date.now();  } while (currentDate - date < milliseconds);   }
@@ -25,6 +27,6 @@ for(i=0 ; i < Nodes.length ; i++)
 	total += 1;
 	console.log('i='+ (i+1) + '/' + Nodes.length + ' ('+total+')');
 	if( i === MaxCnt-1 ) break;
-	sleep(1000); // 1000=норм
+	sleep( getRandomArbitrary(300,1000) ); // Всегда1000=норм
 }
 

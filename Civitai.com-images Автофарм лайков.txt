@@ -8,10 +8,8 @@ if (typeof(total) === "undefined")
 	var total = 0; // Счетчик всего лайков тыкнуто что бы знать когда будет 50.
 
 function getRandomArbitrary(min, max) { return Math.random() * (max - min) + min; }
-
 function sleep(milliseconds) { // Костыльный таймер из 1 запроса гугла
-  const date = Date.now();  let currentDate = null;
-  do { currentDate = Date.now();  } while (currentDate - date < milliseconds);   }
+  const date = Date.now();  let currentDate = null; do { currentDate = Date.now();  } while (currentDate - date < milliseconds);   }
 
 var SelFirstBtn = "div.mantine-Stack-root div div.mantine-63e7k9 div.mantine-16xlp3a div div.absolute div div.mantine-n1z9jx button:nth-child(1).mantine-Button-root.mantine-4ijnyf"; // 160824-
 

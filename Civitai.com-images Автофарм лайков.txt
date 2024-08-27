@@ -11,9 +11,11 @@ function getRandomArbitrary(min, max) { return Math.random() * (max - min) + min
 function sleep(milliseconds) { // Костыльный таймер из 1 запроса гугла
   const date = Date.now();  let currentDate = null; do { currentDate = Date.now();  } while (currentDate - date < milliseconds);   }
 
+var SelFooterBtn = "div.mantine-Group-root.mantine-5hnvpn div.mantine-Text-root.mantine-1v179jt"; //
 var SelFirstBtn = "div.mantine-Stack-root div div.mantine-63e7k9 div.mantine-16xlp3a div div.absolute div div.mantine-n1z9jx button:nth-child(1).mantine-Button-root.mantine-4ijnyf"; // 160824-
 
-var Nodes = document.querySelectorAll(SelFirstBtn)
+var NodeBtn = document.querySelectorAll(SelFooterBtn);
+var Nodes = document.querySelectorAll(SelFirstBtn);
 console.log('Всего='+Nodes.length); // Считает только первый смайл. Вернет только где он не нажат.
 
 var MaxCnt = 10; // Кликов подряд за раз.

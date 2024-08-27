@@ -11,7 +11,10 @@ var SelFirstBtn = "div.mantine-Group-root.__mantine-ref-info div.mantine-Group-r
 
 
 
-
+NodeBtn.item(0)
+NodeBtn.item(0).setAttribute('style','background: red;');
+NodeBtn.item(0).setAttribute('onclick','alert(1);');
+NodeBtn.item(0).textContent = 'CLICK';
 
 ===============================
 

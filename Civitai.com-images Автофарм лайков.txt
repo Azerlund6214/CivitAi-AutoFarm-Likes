@@ -11,10 +11,23 @@ function getRandomArbitrary(min, max) { return Math.random() * (max - min) + min
 function sleep(milliseconds) { // Костыльный таймер из 1 запроса гугла
   const date = Date.now();  let currentDate = null; do { currentDate = Date.now();  } while (currentDate - date < milliseconds);   }
 
-var SelFooterBtn = "div.mantine-Group-root.mantine-5hnvpn div.mantine-Text-root.mantine-1v179jt"; //
+// Сделать кнопку слева внизу, что бы такать по ней а не вставлять в консоль.
+function MakeButton()
+{
+	var SelFooterBtn = "div.mantine-Group-root.mantine-5hnvpn div.mantine-Text-root.mantine-1v179jt"; // 270824-
+	var NodeBtn = document.querySelectorAll(SelFooterBtn);
+	NodeBtn.item(0).setAttribute('style','background: red;');
+	NodeBtn.item(0).setAttribute('onclick','MAIN();');
+	NodeBtn.item(0).textContent = 'CLICK';
+}
+MakeButton();
+
+
+function MAIN()
+{
+
 var SelFirstBtn = "div.mantine-Stack-root div div.mantine-63e7k9 div.mantine-16xlp3a div div.absolute div div.mantine-n1z9jx button:nth-child(1).mantine-Button-root.mantine-4ijnyf"; // 160824-
 
-var NodeBtn = document.querySelectorAll(SelFooterBtn);
 var Nodes = document.querySelectorAll(SelFirstBtn);
 console.log('Всего='+Nodes.length); // Считает только первый смайл. Вернет только где он не нажат.
 
@@ -30,3 +43,5 @@ for(i=0 ; i < Nodes.length ; i++)
 	sleep( getRandomArbitrary(300,1000) ); // Всегда1000=норм
 }
 
+
+}

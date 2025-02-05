@@ -1,4 +1,7 @@
 // ### https://civitai.com/images
+// ### Chrome -> F12 -> Консоль -> Копировать целиком и вставить.
+// ### Сверху слева покрасится красным - это кнопка.   Жать туда(Но не по ссылкам) и будет крутить по 10 лайков.  После 50шт по 3.
+// ### Чтоб прогружало карточки - листать ленту вниз.
 // ### Ставит первую реакцию если она не стоит.
 // ### Work 100%: 050225
 // ### Во время выполнения полностью вешает все потоки страницы.
@@ -11,7 +14,7 @@ function getRandomArbitrary(min, max) { return Math.random() * (max - min) + min
 function sleep(milliseconds) { // Костыльный таймер из 1 запроса гугла
   const date = Date.now();  let currentDate = null; do { currentDate = Date.now();  } while (currentDate - date < milliseconds);   }
 
-// Сделать кнопку слева внизу, что бы такать по ней а не вставлять в консоль.
+// Сделать кнопку слева вверху, что бы такать по ней а не вставлять в консоль.
 function MakeButton()
 {
 	//var SelFooterBtn = "div.mantine-Group-root.mantine-5hnvpn div.mantine-Text-root.mantine-1v179jt"; // 270824-конецАвг24
@@ -29,7 +32,7 @@ MakeButton();
 function MAIN()
 {
 
-var SelFirstBtn = "div.mantine-Stack-root div div.mantine-63e7k9 div.mantine-16xlp3a div div.absolute div div.mantine-n1z9jx button:nth-child(1).mantine-Button-root.mantine-4ijnyf"; // 160824-конецАвг24
+//var SelFirstBtn = "div.mantine-Stack-root div div.mantine-63e7k9 div.mantine-16xlp3a div div.absolute div div.mantine-n1z9jx button:nth-child(1).mantine-Button-root.mantine-4ijnyf"; // 160824-конецАвг24
 var SelFirstBtn = "main div div div.MasonryContainer_queries__bS_ak div div div div > div:nth-child(2) > div > button:nth-child(1).mantine-4ijnyf"; // 050225-
 
 

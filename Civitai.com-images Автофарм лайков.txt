@@ -4,7 +4,7 @@
 // ### Чтоб прогружало карточки - листать ленту вниз.
 // ### Ставит первую реакцию если она не стоит.
 // ### Work 100%: 050225
-// ### Во время выполнения полностью вешает все потоки страницы.
+// ### Во время выполнения полностью вешает все потоки страницы. Поэтому все тыки отправляются одновремено разом в конце!!!
 // ### При интервале 1сек+10шт не банит 2 недели.
 
 if (typeof(total) === "undefined")
@@ -40,7 +40,7 @@ var SelFirstBtn = "main div div div.MasonryContainer_queries__bS_ak div div div 
 var Nodes = document.querySelectorAll(SelFirstBtn);
 console.log('Всего='+Nodes.length); // Считает только первый смайл. Вернет только где он не нажат.
 
-var MaxCnt = 10; // Кликов подряд за раз.
+var MaxCnt = 5; // Кликов подряд за раз.
 if( total >= 50 )  MaxCnt = 3; // Если уже накрутили, дальше докручиваем понемногу тк обычно 2-5 из 50 не засчитывает.
 
 for(i=0 ; i < Nodes.length ; i++)
@@ -49,7 +49,7 @@ for(i=0 ; i < Nodes.length ; i++)
 	total += 1;
 	console.log('i='+ (i+1) + '/' + Nodes.length + ' ('+total+')');
 	if( i === MaxCnt-1 ) break;
-	sleep( getRandomArbitrary(300,1000) ); // Всегда1000=норм
+	sleep( getRandomArbitrary(30,100) ); // Всегда1000=норм
 }
 
 

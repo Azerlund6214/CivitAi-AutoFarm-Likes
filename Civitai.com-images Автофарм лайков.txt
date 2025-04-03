@@ -18,7 +18,7 @@ function sleep(milliseconds) { // Костыльный таймер из 1 за�
 var counterI = 0;
 function createCounter()
 {
-	//if( counterI % 60 === 0 ) // Вывод каждые 60сек
+	if( counterI % 60 === 0 ) // Вывод каждые 60сек
 		console.log('counterI: '+counterI+'мин');
 	var sel = "div.mantine-Text-root.mantine-1ul1owb > div > div"; // Энергия справа вверху
 	document.querySelector(sel).textContent = document.querySelectorAll(SelFirstBtn).length;

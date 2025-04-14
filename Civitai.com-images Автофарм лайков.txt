@@ -7,6 +7,11 @@
 // ### Work 100%: авг24, 050225, 170325, 030425, 140425
 // ### Во время выполнения полностью вешает все потоки страницы. Поэтому все тыки отправляются одновремено разом в конце!!!
 // ### Нафармлено 10к+ энергии. Тыкать с интервалом пара секунд.
+// ### Максимальный афк(без поста) фарм в день = лайки100+генератор40+подписки30+еже25 = 195.   Но хз почему в статах +181.
+
+
+// #### #### ####
+// ## Хелперы и переменные
 
 if (typeof(total) === "undefined")
 	var total = 0; // Счетчик всего лайков тыкнуто что бы знать когда будет 50.
@@ -15,6 +20,8 @@ function getRandomArbitrary(min, max) { return Math.random() * (max - min) + min
 function sleep(milliseconds) { // Костыльный таймер из 1 запроса гугла
   const date = Date.now();  let currentDate = null; do { currentDate = Date.now();  } while (currentDate - date < milliseconds);   }
 
+// #### #### ####
+// ## Счетчик доступных карточек справа вверху.
 
 var counterI = 0;
 function createCounter()
@@ -29,8 +36,9 @@ function createCounter()
 let timerCounter = setInterval( () => createCounter() , 1000 );
 setTimeout(() => { clearInterval(timerCounter); console.log('counterI: '+counterI+'мин  stop'); }, 300000); // 5минут   работает.
 
+// #### #### ####
+// ## Сделать красную кнопку слева вверху, что бы такать по ней а не вставлять в консоль.
 
-// Сделать кнопку слева вверху, что бы такать по ней а не вставлять в консоль.
 function MakeButton()
 {
 	//var SelFooterBtn = "div.mantine-Group-root.mantine-5hnvpn div.mantine-Text-root.mantine-1v179jt"; // 270824-конецАвг24
@@ -44,21 +52,26 @@ function MakeButton()
 }
 MakeButton();
 
-
+// #### #### ####
+// ## Самое важное - селектор кнопки которая будет тыкаться.
 
 //var SelFirstBtn = "div.mantine-Stack-root div div.mantine-63e7k9 div.mantine-16xlp3a div div.absolute div div.mantine-n1z9jx button:nth-child(1).mantine-Button-root.mantine-4ijnyf"; // 160824-конецАвг24
 var SelFirstBtn = "main div div div.MasonryContainer_queries__bS_ak div div div div > div:nth-child(2) > div > button:nth-child(1).mantine-4ijnyf"; // 050225-
 
+// #### #### ####
+// ## Главный метод в котором происходят нажатия и логика.
+
 function MAIN()
 {
 
-
+// Получаем элементы для тыков. Считает только первый смайл. Вернет только где он не нажат.
 var Nodes = document.querySelectorAll(SelFirstBtn);
-console.log('Всего='+Nodes.length); // Считает только первый смайл. Вернет только где он не нажат.
+console.log('Всего='+Nodes.length);
 
 var MaxCnt = 5; // Кликов подряд за раз.
 if( total >= 70 )  MaxCnt = 3; // Если уже накрутили, дальше докручиваем понемногу тк обычно 2-5 из 50 не засчитывает.
 
+// Кликаем 5 штук в цикле с интервалом.
 for(i=0 ; i < Nodes.length ; i++)
 {
 	Nodes.item(i).click();	
@@ -69,4 +82,6 @@ for(i=0 ; i < Nodes.length ; i++)
 }
 
 
-}
+} // End MAIN
+
+// #### #### ####
